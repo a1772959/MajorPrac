@@ -9,14 +9,27 @@ class Creature
 public:
 	// Constructors
 	Creature();
-	Creature(string setName, int setHP, int setAC, int setToHit, int setDexMod);
+	Creature(string SetName, int SetHP, int SetAC, int SetToHit, int SetDexMod);
 	~Creature();
 
 	// Behaviours
 	//  Meaningful functions
 	void Disengage(); // Escapes combat with 'Engaged', resetting both creatures 'Engaged' to empty and placing them in the disengaged set.
 	/*virtual*/ void Act(); // Tells the creature to take it's turn. Each subclass version specifies how it behaves.
-	//  Getters and Setters - for initial ease these are not yet being implemented
+	//  Setters and Getters
+	void setName(string SetName);
+	string getName();
+	void setHP(int SetHP);
+	int getHP();
+	void setAC(int SetAC);
+	int getAC();
+	void setToHit(int SetToHit);
+	int getToHit();
+	void setDexMod(int SetDexMod);
+	int getDexMod();
+	void setEngaged(Creature SetEngaged);
+	Creature *getEngaged();
+
 
 
 

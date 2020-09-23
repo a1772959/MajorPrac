@@ -1,4 +1,5 @@
 #include "Creature.h"
+#include "Group.h"
 #include <string>
 using namespace std;
 
@@ -19,21 +20,35 @@ Creature::Creature(string setName, int setHP, int setAC, int setToHit, int setDe
 	int AC = setAC; 
 	int toHit = setToHit;
 	int dexMod = setDexMod; 
-	Creature * Engaged; // * ^
+	Engaged = NULL; // * ^
 }
 
-void Creature::Disengage(/* May have to put the Team object for disengaged creature in here */) 
+void Creature::Disengage() 
 {
 	Engaged->Engaged = NULL; 
-	// Disengaged.add(Engaged) //Disengaged team not yet implemented
+	//Disengaged.addCreature(Engaged); // Won't work within a Bahoviour. Must find solution.
 	Engaged = NULL;
-	// Disengage.add(?)
+	//Disengage.addCreature(this);
 }
 
-void act()
+void Creature::Act()
 {
 
 }
+
+// Setters and Getters
+void Creature::setName(string SetName) {Name = SetName;}
+string Creature::getName() {return Name;}
+void Creature::setHP(int SetHP) {Health = SetHP;}
+int Creature::getHP() {return Health;}
+void Creature::setAC(int SetAC) {AC = SetAC;}
+int Creature::getAC() {return AC;}
+void Creature::setToHit(int SetToHit) {toHit = SetToHit;}
+int Creature::getToHit() {return toHit;}
+void Creature::setDexMod(int SetDexMod) {dexMod = SetDexMod;}
+int Creature::getDexMod() {return dexMod;}
+void Creature::setEngaged(Creature SetEngaged) {Engaged = &SetEngaged;}
+Creature *Creature::getEngaged() {return Engaged;}
 
 Creature::~Creature()
 {
