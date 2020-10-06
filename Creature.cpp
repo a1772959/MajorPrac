@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-Creature::Creature()
+void Creature::Creature()
 {
 	Name = "Default";
 	Health = 1;
@@ -13,10 +13,10 @@ Creature::Creature()
 	Engaged = NULL; // Not quite sure if this is done right. Meant to represent an empty Creature pointer.
 }
 
-Creature::Creature(string setName, int setHP, int setAC, int setToHit, int setDexMod)
+void Creature::Creature(string setName, int setHP, int setAC, int setToHit, int setDexMod)
 {
 	string Name = setName;
-	int Heath = setHP;
+	int HP = setHP;
 	int AC = setAC; 
 	int toHit = setToHit;
 	int dexMod = setDexMod; 
@@ -39,8 +39,8 @@ void Creature::Act()
 // Setters and Getters
 void Creature::setName(string SetName) {Name = SetName;}
 string Creature::getName() {return Name;}
-void Creature::setHP(int SetHP) {Health = SetHP;}
-int Creature::getHP() {return Health;}
+void Creature::setHP(int SetHP) {HP = SetHP;}
+int Creature::getHP() {return HP;}
 void Creature::setAC(int SetAC) {AC = SetAC;}
 int Creature::getAC() {return AC;}
 void Creature::setToHit(int SetToHit) {toHit = SetToHit;}

@@ -35,7 +35,7 @@ public:
 
 	// Variables
 	string Name;
-	int Health;
+	int HP;
 	int AC; // Value an enemy 'attack' has to reach to hit
 	int toHit; // Value added to attacks
 	int dexMod; // Required to determine place in initiative as well as some future features
