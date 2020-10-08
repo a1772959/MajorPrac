@@ -5,52 +5,55 @@ using namespace std;
 
 void Creature::Creature()
 {
-	Name = "Default";
-	Health = 1;
+	name = "Default";
+	HP = 1;
 	AC = 10; 
 	toHit = 2;
 	dexMod = 0; 
-	Engaged = NULL; // Not quite sure if this is done right. Meant to represent an empty Creature pointer.
+	engaged = NULL; // Not quite sure if this is done right. Meant to represent an empty Creature pointer.
 }
 
 void Creature::Creature(string setName, int setHP, int setAC, int setToHit, int setDexMod)
 {
 	string Name = setName;
-	int HP = setHP;
-	int AC = setAC; 
-	int toHit = setToHit;
-	int dexMod = setDexMod; 
+	HP = setHP;
+	AC = setAC; 
+	ToHit = setToHit;
+	DexMod = setDexMod; 
 	Engaged = NULL; // * ^
 }
 
 void Creature::Disengage() 
 {
-	Engaged->Engaged = NULL; 
-	//Disengaged.addCreature(Engaged); // Won't work within a Bahoviour. Must find solution.
-	Engaged = NULL;
-	//Disengage.addCreature(this);
+	engaged->engaged = NULL; 
+	engaged = NULL;
 }
 
 void Creature::Act()
 {
-
+	for (int i = 0; i < team->GetTarget->; ++i)
+	{
+		/* code */
+	}
 }
 
 // Setters and Getters
-void Creature::setName(string SetName) {Name = SetName;}
-string Creature::getName() {return Name;}
-void Creature::setHP(int SetHP) {HP = SetHP;}
+void Creature::SetName(string setName) {name = setName;}
+string Creature::getName() {return name;}
+void Creature::SetHP(int setHP) {HP = setHP;}
 int Creature::getHP() {return HP;}
-void Creature::setAC(int SetAC) {AC = SetAC;}
+void Creature::SetAC(int setAC) {AC = setAC;}
 int Creature::getAC() {return AC;}
-void Creature::setToHit(int SetToHit) {toHit = SetToHit;}
-int Creature::getToHit() {return toHit;}
-void Creature::setDexMod(int SetDexMod) {dexMod = SetDexMod;}
-int Creature::getDexMod() {return dexMod;}
-void Creature::setEngaged(Creature SetEngaged) {Engaged = &SetEngaged;}
-Creature *Creature::getEngaged() {return Engaged;}
+void Creature::SetToHit(int setToHit) {toHit = setToHit;}
+int Creature::getToHit() {return ToHit;}
+void Creature::SetDexMod(int setDexMod) {dexMod = setDexMod;}
+int Creature::getDexMod() {return DexMod;}
+void Creature::SetTeam(Group setTeam) {team = &setTeam;}
+Group *Creature::getTeam() {return team;}
+void Creature::setEngaged(Creature setEngaged) {engaged = &setEngaged;}
+Creature *Creature::getEngaged() {return engaged;}
 
-Creature::~Creature()
+/*virtual*/ Creature::~Creature()
 {
 
 }

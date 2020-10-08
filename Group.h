@@ -1,25 +1,33 @@
+#ifndef GROUP
+#define GROUP
+
+
 #include "Creature.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
-#ifndef GROUP
-#define GROUP
-
 class Group
 {
 public:
-	Group(int Cap);
-	void addCreature(Creature Creat);
-	void removeCreature(Creature Creat);
-	Creature *getCreature(int index);
-	void printStatus();
-	bool notEmpty();
+	// Constructors
+	Group(int cap);
 	~Group();
+	
+	// Behaviours
+	void AddCreature(Creature creat);
+	void RemoveCreature(Creature creat);
+	Creature *GetCreature(int index);
+	void PrintStatus();
+	bool NotEmpty();
 
-	Creature ** List;
-	int Capacity;
-	int Count;
+	// Setters and Getters
+
+
+	// Variables
+	Creature ** list;
+	int capacity;
+	int count;
 };
 
 #endif

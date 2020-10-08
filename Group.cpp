@@ -4,49 +4,49 @@
 #include <iostream>
 using namespace std;
 
-Group::Group(int Cap)
+Group::Group(int cap)
 {
-	Capacity = Cap;
-	Count = 0;
-	List = new Creature*[Capacity];
+	capacity = cap;
+	count = 0;
+	list = new Creature*[capacity];
 }
 
-void Group::addCreature(Creature Creat)
+void Group::addCreature(Creature creat)
 {
-	List[Count] = &Creat;
-	Count++;
+	list[count] = &creat;
+	count++;
 }
 
-void Group::removeCreature(Creature Creat)
+void Group::removeCreature(Creature creat)
 {
-	for (int i = 0; i < Count; ++i) // Find the requested creature
+	for (int i = 0; i < count; ++i) // Find the requested creature
 	{
-		if (List[i] == &Creat)
+		if (list[i] == &creat)
 		{
-			List[i] = List[Count]; // Move the last entry to the removed creatures slot
-			List[Count] = NULL; // Remove the last entry
-			Count--;
+			list[i] = list[count]; // Move the last entry to the removed creatures slot
+			list[Count] = NULL; // Remove the last entry
+			count--;
 			break;
 		}
 	}
 }
 
-Creature *Group::getCreature(int index)
+Creature *Group::GetCreature(int index)
 {
-	return List[index];
+	return list[index];
 }
 
-void Group::printStatus()
+void Group::PrintStatus()
 {
-	for (int i = 0; i < Count; ++i)
+	for (int i = 0; i < count; ++i)
 	{
-		cout << List[i]->getName() << " " << List[i]->getHP() << endl;
+		cout << list[i]->GetName() << " " << list[i]->GetHP() << endl;
 	}
 }
 
-bool Group::notEmpty() // Tests if the Group empty, used in game 'while loop' to determine if both teams are up
+bool Group::NotEmpty() // Tests if the Group empty, used in game 'while loop' to determine if both teams are up
 {
-	if (Count > 0)
+	if (count > 0)
 	{
 		return true;
 	}
@@ -55,5 +55,5 @@ bool Group::notEmpty() // Tests if the Group empty, used in game 'while loop' to
 
 Group::~Group()
 {
-	delete List;
+	delete list;
 }
