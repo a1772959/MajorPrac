@@ -11,7 +11,7 @@ public:
 
 	//Constructors
 	Melee();
-	Melee(string SetName, int SetHP, int SetAC, int SetToHit, int SetDexMod, int SetNumAttacks, int SetDmgPerHit);
+	Melee(string setName, int setHP, int setAC, int setToHit, int setDexMod, int setNumAttacks, int setDmgPerHit);
 	~Melee();
 
 	//Behaviours
@@ -19,14 +19,14 @@ public:
 	void Act(); // if engaged is empty then engage. then for (1-num attack): IF((rand,1,20+you->toHit)>Engaged->AC) THEN Engaged->HP=Engaged->HP=DmgPerHit
 
 	//Setters and Getters
-	void SetNumAttacks();
+	void SetNumAttacks(int setNumAttacks);
 	int GetNumAttacks();
-	void SetNumAttacks();
-	int GetNumAttacks();
+	void SetDmgPerHit(int setDmgPerHit);
+	int GetDmgPerHit();
 
 	//Variables
-	int NumAttacks
-	int DmgPerHit
+	int numAttacks;
+	int dmgPerHit;
 }
 
 #endif
