@@ -6,7 +6,7 @@ Git overview:
 
 SETUP
 
-git clone https://github.com/a1772959/MajorPrac.git
+git clone https://github.com/a1772959/ADDS.git
 
 cd MajorPrac
 
@@ -25,3 +25,9 @@ COMMIT
 git commit -m "Well written comment"
 
 git push
+
+
+UPDATE
+
+git pull
+
